@@ -4,7 +4,22 @@
     padding: 10px 61px 16px 61px;
     gap: 0px;
     border-radius: 20px 0px 20px 20px;
-    opacity: 0px;
+    opacity: 1;
     background: #888DF2;
     box-shadow: 0px 0px 50px 0px #888DF280;
+}
+
+
+
+@media (max-width: 768px) {
+    .botão {
+        width: 12vw;
+        height: 6vh;
+        padding: 0.8rem 2.5rem;
+        font-size: 1rem;
+    }
+    #title {
+        margin-left:70vw;
+       
+    }
 }
