@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import Artigo from './Artigo'; 
-import './MenuArtigos.css'; 
-import TodosArtigosLogo from '../assets/TODOS OS ARTIGOS .png';
+import Artigo from './Artigo';
 import { Link } from 'react-router-dom';
 import { TopBarTwo } from './TopBarTwo';
 
@@ -13,16 +11,13 @@ export const MenuArtigos = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/artigos.json'); 
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
+        const response = await fetch('/artigos.json');
+        if (!response.ok) throw new Error('Erro ao carregar os artigos');
         const data = await response.json();
-        console.log('JSON Data:', data); 
         const sortedData = data.sort((a, b) => new Date(b.date) - new Date(a.date));
         setArtigos(sortedData);
       } catch (error) {
-        console.error('Error fetching the artigos:', error);
+        console.error('Erro ao buscar os artigos:', error);
       }
     };
 
@@ -30,30 +25,43 @@ export const MenuArtigos = () => {
   }, []);
 
   return (
-    <div id="outer-container" className="outer-container">
-      <TopBarTwo/>
-      <div id="menu-artigos" className="menu-artigos py-10 flex flex-col items-center">
-        <div className="w-full flex justify-between items-start mb-12">
-          <img src={TodosArtigosLogo} alt="Logo" className="logo"  style={{ marginTop: '10%' , marginLeft:'1%', width:'fit-content', height:'fit-content'}} />
-          <Link to="/" className="link-custom" style={{ marginTop: '10%', marginRight:'6%' }}>
-            Voltar para a página inicial <FontAwesomeIcon icon={faArrowRight} className="icon-custom" />
+    <div className="h-screen w-full bg-[#DFEFA6] text-black flex flex-col">
+      <TopBarTwo />
+
+      {/* Wrapper to offset TopBarTwo */}
+      <div className="flex-1 flex flex-col pt-[80px]">
+        {/* Sticky header */}
+        <div className="sticky top-0 z-10 bg-[#DFEFA6] w-full max-w-[1270px] mx-auto px-6 py-6 flex justify-between items-center">
+          <h1 className="text-3xl font-bold">ARTIGOS</h1>
+          <Link
+            to="/"
+            className="text-sm font-semibold hover:underline flex items-center gap-2"
+          >
+            Voltar para a página inicial <FontAwesomeIcon icon={faArrowRight} />
           </Link>
         </div>
-        {artigos.length > 0 ? (
-          artigos.map((artigo, index) => (
-            <Artigo 
-              key={index}
-              id={artigo.id}
-              title={artigo.title}
-              authors={artigo.authors} 
-              revista={artigo.revista} 
-              text={artigo.text}
-              date={artigo.date}
-            />
-          ))
-        ) : (
-          <p>Loading artigos...</p>
-        )}
+
+        {/* Scrollable article list */}
+        <div className="flex-1 overflow-y-auto px-6 py-8 space-y-6">
+          {artigos.length > 0 ? (
+            artigos.map((artigo, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl shadow-md p-6 w-full max-w-[1270px] mx-auto transform transition duration-200 ease-in-out hover:shadow-lg hover:scale-[1.01] cursor-pointer"
+              >
+                <Link to={`/artigos/${artigo.id}`}>
+                  <h3 className="font-bold text-lg mb-1">{artigo.title}</h3>
+                  <p className="text-sm font-semibold mb-2">
+                    <span className="italic">{artigo.authors}</span> • {artigo.revista}, {artigo.date}
+                  </p>
+                  <p className="text-sm text-gray-700 line-clamp-3">{artigo.text}</p>
+                </Link>
+              </div>
+            ))
+          ) : (
+            <p className="text-center">Carregando artigos...</p>
+          )}
+        </div>
       </div>
     </div>
   );

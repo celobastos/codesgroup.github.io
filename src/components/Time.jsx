@@ -1,97 +1,109 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ReactComponent as TimeBar } from '../assets/O TIME.svg';
 
+const members = {
+  Professor: [
+    {
+      name: 'George Darmiton da Cunha Cavalcanti',
+      role: 'Professor Titular do Centro de Informática da UFPE',
+      link: 'http://darmiton.com',
+    },
+  ],
+  Doutorado: [
+    { name: 'Ingryd Pereira', role: 'Doutoranda em Ciência da Computação' },
+    {
+      name: 'Johnattan Douglas F. Viana',
+      role: 'Doutorando em Ciência da Computação',
+      link: 'http://lattes.cnpq.br/4244055492368435',
+    },
+  ],
+  Mestrado: [
+    { name: 'Leilane Cruz', role: 'Mestranda em Ciência da Computação' },
+    { name: 'Lucas A. Lisboa', role: 'Mestrando em Ciência da Computação' },
+  ],
+  'Membros Associados': [
+    { name: 'Francimaria Nascimento', role: 'Doutoranda em Ciência da Computação' },
+    {
+      name: 'Rafael Menelau Oliveira e Cruz',
+      role: 'Professor Assistente em ÉTS-Montréal',
+      link: 'https://scholar.google.com/citations?user=jtYFoD0AAAAJ&hl=en',
+    },
+  ],
+  Graduação: [
+    {
+      name: 'Bianca Lima',
+      role: 'Graduanda em Letras Português',
+      link: 'https://br.linkedin.com/in/biancanathally',
+    },
+    { name: 'Camila Vieira', role: 'Graduanda em Engenharia da Computação' },
+    { name: 'Ernesto Gonçalves', role: 'Graduando em Ciência da Computação' },
+    {
+      name: 'Igor Rocha',
+      role: 'Graduando em Ciência da Computação',
+      link: 'https://www.linkedin.com/in/igorrocha28',
+    },
+    { name: 'Joao Victor Cardoso Lopes', role: 'Graduando em Engenharia da Computação' },
+    { name: 'Jose Vinicius de Santana Souza', role: 'Graduando em Engenharia da Computação' },
+    {
+      name: 'Lucas Nascimento Brandao',
+      role: 'Graduando em Engenharia da Computação',
+      link: 'https://www.linkedin.com/in/lucas-n-brandão',
+    },
+    { name: 'Marcelo Vinicius Bastos Santos', role: 'Graduando em Engenharia da Computação' },
+    { name: 'Matheus Julio Boncsidai de Oliveira', role: 'Graduando em Engenharia da Computação' },
+  ],
+};
+
+const tabs = ['Graduação', 'Mestrado', 'Doutorado', 'Membros Associados'];
+
 export const TimeSection = () => {
+  const [activeTab, setActiveTab] = useState('Graduação');
+
+  const renderCard = ({ name, role, link }, index) => (
+    <div key={index} className="flex flex-col items-center text-center p-4">
+      <div className="w-52 h-52 rounded-full bg-lime-200 mb-4" />
+      <div className="text-white text-base font-bold">
+        {link ? (
+          <a href={link} target="_blank" rel="noopener noreferrer" className="hover:text-lime-300">
+            {name}
+          </a>
+        ) : (
+          name
+        )}
+      </div>
+      <div className="text-white text-sm mt-1">{role}</div>
+    </div>
+  );
+
   return (
-    <div id='time' className="Time text-center bg-black text-white ml-11 mt-80">
+    <div id="time" className="bg-black text-white px-6 md:px-12 py-16">
       <TimeBar />
-      <div className='p-7 flex mt-11 justify-center'>
-        <div id='left-col' className='w-1/3 flex flex-col items-end mr-24'>
-          <h2 className='text-xl font-bold mb-2 ml-4 mr-7'>Professor</h2>
-          <div className='flex flex-col'>
-            <div className='bg-black rounded-lg p-4 my-1 mx-4 text-right'>
-              <span className='font-bold'><a className='hover:text-custom-green' href="http://darmiton.com" target="_blank" rel="noopener noreferrer">George Darmiton da Cunha Cavalcanti</a></span><br/>
-              Professor Titular do Centro de Informática da UFPE
-            </div>
-          </div>
 
-          <h2 className='text-xl font-bold mt-4 mb-4 mr-7'>Doutorado</h2>
-          <div className='flex flex-col'>
-            <div className='bg-black rounded-lg p-4 my-1 mx-4 text-right'>
-              <span className='font-bold'>Ingryd Pereira</span><br/>
-              Doutoranda em Ciência da Computação
-            </div>
-            <div className='bg-black rounded-lg p-4 my-1 mx-4 text-right'>
-              <span className='font-bold'><a className='hover:text-custom-green' href="http://lattes.cnpq.br/4244055492368435" target="_blank" rel="noopener noreferrer">Johnattan Douglas F. Viana</a></span><br/>
-              Doutorando em Ciência da Computação
-            </div>
-          </div>
+      {/* Professor fixo sem título */}
+      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+        {members['Professor'].map(renderCard)}
+      </div>
 
-          <h2 className='text-xl font-bold mb-2 ml-4 mr-7'>Mestrado</h2>
-          <div className='flex flex-col'>
-            <div className='bg-black rounded-lg p-4 my-1 mx-4 text-right'>
-              <span className='font-bold'>Leilane Cruz</span><br/>
-              Mestranda em Ciência da Computação
-            </div>
-            <div className='bg-black rounded-lg p-4 my-1 mx-4 text-right'>
-              <span className='font-bold'>Lucas A. Lisboa</span><br/>
-              Mestrando em Ciência da Computação
-            </div>
-          </div>
-          <h2 className='text-xl font-bold mb-2 ml-4 mr-7'>Membros Associados</h2>
-          <div className='flex flex-col'>
-            <div className='bg-black rounded-lg p-4 my-1 mx-4 text-right'>
-              <span className='font-bold'>Francimaria Nascimento</span><br/>
-              Doutoranda em Ciência da Computação
-            </div>
-            <div className='bg-black rounded-lg p-4 my-1 mx-4 text-right'>
-              <span className='font-bold'><a className='hover:text-custom-green' href="https://scholar.google.com/citations?user=jtYFoD0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Rafael Menelau Oliveira e Cruz</a></span><br/>
-              Professor Assistente em ÉTS-Montréal
-            </div>
-          </div>
-        </div>
+      {/* Tabs */}
+      <div className="flex flex-wrap justify-start mt-16 gap-4 text-sm">
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`px-5 py-2 rounded-full transition ${
+              activeTab === tab
+                ? 'bg-lime-200 text-black font-semibold'
+                : 'text-white hover:bg-white hover:text-black'
+            }`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
 
-        <div id='right-col' className='w-1/3 flex flex-col items-center'>
-          <h2 className='text-xl font-bold w-full mb-2 text-left ml-16'>Graduação</h2>
-          <div className='flex flex-wrap w-full'>
-            <div className='bg-black rounded-lg p-4 my-1 mx-4 w-full text-left'>
-              <span className='font-bold'><a className='hover:text-custom-green' href="https://br.linkedin.com/in/biancanathally" target="_blank" rel="noopener noreferrer">Bianca Lima</a></span><br/>
-              Graduanda em Letras Português
-            </div>
-            <div className='bg-black rounded-lg p-4 my-1 mx-4 w-full text-left'>
-              <span className='font-bold'>Camila Vieira</span><br/>
-              Graduanda em Engenharia da Computação
-            </div>
-            <div className='bg-black rounded-lg p-4 my-1 mx-4 w-full text-left'>
-              <span className='font-bold'>Ernesto Gonçalves</span><br/>
-              Graduando em Ciência da Computação
-            </div>
-            <div className='bg-black rounded-lg p-4 my-1 mx-4 w-full text-left'>
-              <span className='font-bold'><a className='hover:text-custom-green' href="https://www.linkedin.com/in/igorrocha28" target="_blank" rel="noopener noreferrer">Igor Rocha</a></span><br/>
-              Graduando em Ciência da Computação
-            </div>
-            <div className='bg-black rounded-lg p-4 my-1 mx-4 w-full text-left'>
-              <span className='font-bold'>Joao Victor Cardoso Lopes</span><br/>
-              Graduando em Engenharia da Computação
-            </div>
-            <div className='bg-black rounded-lg p-4 my-1 mx-4 w-full text-left'>
-              <span className='font-bold'>Jose Vinicius de Santana Souza</span><br/>
-              Graduando em Engenharia da Computação
-            </div>
-            <div className='bg-black rounded-lg p-4 my-1 mx-4 w-full text-left'>
-              <span className='font-bold'><a className='hover:text-custom-green' href="https://www.linkedin.com/in/lucas-n-brandão" target="_blank" rel="noopener noreferrer">Lucas Nascimento Brandao</a></span><br/>
-              Graduando em Engenharia da Computação
-            </div>
-            <div className='bg-black rounded-lg p-4 my-1 mx-4 w-full text-left'>
-              <span className='font-bold'>Marcelo Vinicius Bastos Santos</span><br/>
-              Graduando em Engenharia da Computação
-            </div>
-            <div className='bg-black rounded-lg p-4 my-1 mx-4 w-full text-left'>
-              <span className='font-bold'>Matheus Julio Boncsidai de Oliveira</span><br/>
-              Graduando em Engenharia da Computação
-            </div>
-          </div>
-        </div>
+      {/* Cards */}
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+        {members[activeTab].map(renderCard)}
       </div>
     </div>
   );
