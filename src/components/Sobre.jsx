@@ -1,9 +1,18 @@
-import React from 'react';
 import { ReactComponent as GrupoPesquisaSVG } from '../assets/O GRUPO DE PESQUISA.svg';
+import lupa2 from '../assets/lupa2.svg'; 
 
 export const Sobre = () => {
   return (
-    <section id="sobre" className="w-full bg-black text-white px-6 py-20 sm:px-10 md:px-20 lg:px-32">
+    <section
+      id="sobre"
+      className="relative w-full bg-black text-white px-6 py-20 mb-24 sm:px-10 md:px-20 lg:px-32"
+    >
+      <img
+        src={lupa2}
+        alt="Lupa decorativa"
+        className="hidden sm:block absolute bottom-24 left-0 w-[260px] sm:w-[320px] md:w-[400px] object-contain"
+      />
+
       <div className="flex justify-end">
         <div className="max-w-[800px] overflow-auto text-left">
           <div className="w-full">

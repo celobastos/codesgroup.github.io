@@ -44,11 +44,11 @@ const Artigos = () => {
               key={index}
               className="bg-white rounded-xl shadow-md p-6 transform transition duration-200 ease-in-out hover:shadow-lg hover:scale-105 cursor-pointer w-full max-w-[1270px]"
             >
-              <h3 className="font-bold text-lg mb-1">{artigo.title}</h3>
+              <h3 className="font-bold text-[20px] mb-1">{artigo.title}</h3>
               <p className="text-sm font-semibold mb-2">
                 <span className="italic">{artigo.authors}</span> • {artigo.revista}
               </p>
-              <p className="text-sm text-gray-700 line-clamp-3">{artigo.text}</p>
+              <p className="text-[16px] text-black font-light line-clamp-3">{artigo.text}</p>
             </Link>
           ))
         ) : (

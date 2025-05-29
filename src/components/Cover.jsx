@@ -1,5 +1,5 @@
 import React from 'react';
-import lupa from '../assets/lupa.svg'; // or .png if preferred
+import lupa from '../assets/lupa.svg';
 
 export const Cover = () => {
   return (

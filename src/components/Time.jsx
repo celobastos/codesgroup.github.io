@@ -76,7 +76,7 @@ export const TimeSection = () => {
   );
 
   return (
-    <div id="time" className="bg-black text-white px-6 md:px-12 py-16">
+    <div id="time" className="bg-black text-white px-24 py-16">
       <TimeBar />
 
       {/* Professor fixo sem título */}

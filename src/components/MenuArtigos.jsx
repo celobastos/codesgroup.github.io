@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import Artigo from './Artigo';
 import { Link } from 'react-router-dom';
 import { TopBarTwo } from './TopBarTwo';
 
@@ -32,7 +31,7 @@ export const MenuArtigos = () => {
       <div className="flex-1 flex flex-col pt-[80px]">
         {/* Sticky header */}
         <div className="sticky top-0 z-10 bg-[#DFEFA6] w-full max-w-[1270px] mx-auto px-6 py-6 flex justify-between items-center">
-          <h1 className="text-3xl font-bold">ARTIGOS</h1>
+          <h1 className="text-3xl font-bold">TODOS OS ARTIGOS</h1>
           <Link
             to="/"
             className="text-sm font-semibold hover:underline flex items-center gap-2"
