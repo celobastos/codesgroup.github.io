@@ -1,21 +1,32 @@
-import React from 'react';
-import './Sobre.css';
-import { ReactComponent as GrupoPesquisaSVG } from '../assets/O GRUPO DE PESQUISA.svg';
-import { ReactComponent as Lupinha } from '../assets/lupinha.svg';
-import { ReactComponent as Blocudos } from '../assets/blocudos.svg';
+import lupa2 from '../assets/lupa2.svg'; 
 
 export const Sobre = () => {
   return (
-    <div id='sobre' className="Sobre text-center">
-      <GrupoPesquisaSVG className="mb-4" />
-      <div className="content-wrapper">
-        <div className="text-content">
-          <p>O grupo de pesquisa CoDes (Combate à Desinformação e ao Discurso de Ódio) tem como objetivo estudar, projetar e desenvolver estratégias para combater desinformação, fake news e discurso de ódio. Utilizamos estratégias de Inteligência Artificial, com foco em Aprendizagem de Máquina e Processamento de Linguagem Natural.</p>
-          <p>Nosso trabalho pretende envolver a avaliação de diferentes máquinas de aprendizagem e a combinação de classificadores, além da construção de bancos de dados em português e a geração de dados sintéticos. Para além disso, também propor arquiteturas para lidar com esses desafios, discutindo questões cruciais como ética, IA e desinformação.</p>
+    <section
+      id="sobre"
+      className="relative w-full bg-black text-white px-6 py-20 mb-24 sm:px-10 md:px-20 lg:px-32"
+    >
+      <img
+        src={lupa2}
+        alt="Lupa decorativa"
+        className="hidden sm:block absolute bottom-24 left-0 w-[260px] sm:w-[320px] md:w-[400px] object-contain"
+      />
+
+      <div className="flex justify-end">
+        <div className="max-w-[800px] overflow-auto text-left">
+         <div className="w-full text-3xl font-semibold mb-24">
+            O GRUPO DE PESQUISA
         </div>
-        <Lupinha className="lupinha mb-40" />
-        <Blocudos className="blocudos mt-10" />
+          <div className="space-y-6 text-[20px] leading-relaxed">
+            <p>
+              O grupo de pesquisa CoDes (Combate à Desinformação e ao Discurso de Ódio) tem como objetivo estudar, projetar e desenvolver estratégias para combater desinformação, fake news e discurso de ódio. Utilizamos estratégias de Inteligência Artificial, com foco em Aprendizagem de Máquina e Processamento de Linguagem Natural.
+            </p>
+            <p>
+              Nosso trabalho pretende envolver a avaliação de diferentes máquinas de aprendizagem e a combinação de classificadores, além da construção de bancos de dados em português e a geração de dados sintéticos. Para além disso, também propor arquiteturas para lidar com esses desafios, discutindo questões cruciais como ética, IA e desinformação.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };

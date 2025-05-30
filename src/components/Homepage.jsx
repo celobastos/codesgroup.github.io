@@ -13,9 +13,9 @@ export const Homepage = () => {
       <TopBar/>
       <Cover/>
       <Sobre/> 
-      <TimeSection/> 
       <Artigos /> 
       <Noticias/>
+     <TimeSection/> 
       <Footer/>
     </div>
   )

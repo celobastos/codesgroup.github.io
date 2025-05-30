@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import Noticia from './Noticia';
-import './MenuNoticias.css'; // Specific CSS for MenuNoticias
-import NoticiasLogo from '../assets/TODAS AS NOTÍCIAS.png';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'; 
 import { Link } from 'react-router-dom';
 import { TopBarTwo } from './TopBarTwo';
 
@@ -14,15 +11,12 @@ export const MenuNoticias = () => {
     const fetchData = async () => {
       try {
         const response = await fetch('/noticias.json');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
+        if (!response.ok) throw new Error('Erro ao carregar as notícias');
         const data = await response.json();
-        console.log('JSON Data:', data); // Log the JSON data to the console
         const sortedData = data.sort((a, b) => new Date(b.date) - new Date(a.date));
         setNoticias(sortedData);
       } catch (error) {
-        console.error('Error fetching the noticias:', error);
+        console.error('Erro ao buscar as notícias:', error);
       }
     };
 
@@ -30,28 +24,41 @@ export const MenuNoticias = () => {
   }, []);
 
   return (
-    <div id="outer-container" className="outer-container" style={{ backgroundColor: '#DFEFA6', minHeight:'100%' }}>
+    <div className="h-screen w-full text-black bg-[#DFEFA6]">
       <TopBarTwo />
-      <div id="menu-noticias" className="menu-noticias py-10 flex flex-col items-center">
-        <div className="w-full flex justify-between items-start mb-12">
-          <img src={NoticiasLogo} alt="Imagem" className="pl-24 pt-8" />
-          <Link to="/" className="link-custom mt-8 mr-24">
-            Voltar para a página inicial <FontAwesomeIcon icon={faArrowRight} className="icon-custom" />
-          </Link>
+
+      <div className="fixed top-[140px] z-10 w-full bg-[#DFEFA6] px-6">
+        <div className="max-w-[1270px] mx-auto flex justify-between items-center py-6">
+          <div className="flex items-center gap-4">
+            <Link
+              to="/"
+              className="text-black hover:text-gray-700 transition"
+            >
+              <FontAwesomeIcon icon={faArrowLeft} size="lg" /> 
+            </Link>
+            <h1 className="text-3xl font-semibold">TODAS AS NOTÍCIAS</h1>
+          </div>
         </div>
+      </div>
+
+      <div className="overflow-y-auto h-screen pt-[236px] px-6 pb-8 space-y-6">
         {noticias.length > 0 ? (
           noticias.map((noticia, index) => (
-            <Noticia 
+            <div
               key={index}
-              id={noticia.id}
-              title={noticia.title}
-              author={noticia.author}
-              text={noticia.text}
-              date={noticia.date}
-            />
+              className="bg-white rounded-xl shadow-md p-4 w-full max-w-[1270px] h-[104px] mx-auto transform transition duration-200 ease-in-out hover:shadow-lg hover:scale-[1.01] cursor-pointer overflow-hidden"
+            >
+              <Link to={`/news/${noticia.id}`} className="h-full flex flex-col justify-between">
+                <div className="flex justify-between items-start">
+                  <h3 className="font-bold text-lg">{noticia.title}</h3>
+                  <p className="text-xs text-gray-500 whitespace-nowrap">{noticia.date}</p>
+                </div>
+                <p className="text-sm text-black line-clamp-2">{noticia.text}</p>
+              </Link>
+            </div>
           ))
         ) : (
-          <p>Loading noticias...</p>
+          <p className="text-center text-gray-700">Carregando notícias...</p>
         )}
       </div>
     </div>
