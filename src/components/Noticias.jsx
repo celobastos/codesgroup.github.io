@@ -23,20 +23,20 @@ const Noticias = () => {
   }, []);
 
   return (
-    <div id="noticias" className="bg-[#DFEFA6] px-6 md:px-24 py-16 text-black w-full">
+    <div id="noticias" className="bg-[#DFEFA6] px-4 md:px-24 py-16 text-black w-full">
       {/* Cabeçalho */}
-      <div className="flex justify-between items-center mb-20 w-full max-w-[1270px] mx-auto">
+      <div className="flex justify-between items-center mb-20 w-full">
         <h2 className="text-3xl font-bold">Notícias</h2>
         <Link
           to="/news"
-          className="text-sm font-semibold hover:underline flex items-center gap-2"
+          className="text-3x1 font-semibold hover:underline flex items-center gap-2"
         >
           Ver todas as notícias <FontAwesomeIcon icon={faArrowRight} />
         </Link>
       </div>
 
       {/* Lista de notícias */}
-      <div className="flex flex-col items-center gap-6 w-full max-w-[1270px] mx-auto">
+      <div className="flex flex-col items-center gap-6 w-full">
         {noticias.length > 0 ? (
           noticias.map((noticia, index) => (
             <Link

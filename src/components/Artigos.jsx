@@ -25,11 +25,11 @@ const Artigos = () => {
   return (
     <div id="artigos" className="bg-[#DFEFA6] px-6 md:px-24 py-16 text-black w-full">
       {/* Header */}
-      <div className="flex justify-between items-center mb-20 w-full max-w-[1270px] mx-auto">
+      <div className="flex justify-between items-center mb-20 w-full mx-auto">
         <h2 className="text-3xl font-bold">Artigos</h2>
         <Link
           to="/artigos"
-          className="text-sm font-semibold hover:underline flex items-center gap-2"
+          className="text-3x1 font-semibold hover:underline flex items-center gap-2"
         >
           Ver todos os artigos <FontAwesomeIcon icon={faArrowRight} />
         </Link>
@@ -42,7 +42,7 @@ const Artigos = () => {
             <Link
               to={`/artigos/${artigo.id}`}
               key={index}
-              className="bg-white rounded-xl shadow-md p-6 transform transition duration-200 ease-in-out hover:shadow-lg hover:scale-105 cursor-pointer w-full max-w-[1270px]"
+              className="bg-white rounded-xl shadow-md p-6 transform transition duration-200 ease-in-out hover:shadow-lg hover:scale-105 cursor-pointer w-full"
             >
               <h3 className="font-bold text-[20px] mb-1">{artigo.title}</h3>
               <p className="text-sm font-semibold mb-2">

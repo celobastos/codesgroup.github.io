@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'; 
 import { Link } from 'react-router-dom';
 import { TopBarTwo } from './TopBarTwo';
 
@@ -27,20 +27,20 @@ export const MenuNoticias = () => {
     <div className="h-screen w-full text-black bg-[#DFEFA6]">
       <TopBarTwo />
 
-      {/* Fixed centered header */}
       <div className="fixed top-[140px] z-10 w-full bg-[#DFEFA6] px-6">
         <div className="max-w-[1270px] mx-auto flex justify-between items-center py-6">
-          <h1 className="text-3xl font-bold">NOTÍCIAS</h1>
-          <Link
-            to="/"
-            className="text-sm font-semibold hover:underline flex items-center gap-2"
-          >
-            Voltar para a página inicial <FontAwesomeIcon icon={faArrowRight} />
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              to="/"
+              className="text-black hover:text-gray-700 transition"
+            >
+              <FontAwesomeIcon icon={faArrowLeft} size="lg" /> 
+            </Link>
+            <h1 className="text-3xl font-semibold">TODAS AS NOTÍCIAS</h1>
+          </div>
         </div>
       </div>
 
-      {/* Scrollable news list */}
       <div className="overflow-y-auto h-screen pt-[236px] px-6 pb-8 space-y-6">
         {noticias.length > 0 ? (
           noticias.map((noticia, index) => (

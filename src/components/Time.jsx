@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ReactComponent as TimeBar } from '../assets/O TIME.svg';
 
 const members = {
   Professor: [
@@ -10,16 +9,26 @@ const members = {
     },
   ],
   Doutorado: [
-    { name: 'Ingryd Pereira', role: 'Doutoranda em Ciência da Computação' },
+    { name: 'Ingryd Pereira', 
+      role: 'Doutoranda em Ciência da Computação' ,
+      link: 'http://lattes.cnpq.br/7192547386318453'
+    },
     {
+      name: 'Gabriel Henrique D. da Silva',
+      role: 'Doutorando em Ciência da Computação',
+      link: 'www.linkedin.com/in/gabriel-henrique-6a0050156',
+    },
+     {
       name: 'Johnattan Douglas F. Viana',
       role: 'Doutorando em Ciência da Computação',
       link: 'http://lattes.cnpq.br/4244055492368435',
     },
   ],
   Mestrado: [
+    { name: 'Bianca Lima', role: 'Mestranda em Ciência da Computação', link:'https://br.linkedin.com/in/biancanathally'},
     { name: 'Leilane Cruz', role: 'Mestranda em Ciência da Computação' },
     { name: 'Lucas A. Lisboa', role: 'Mestrando em Ciência da Computação' },
+    { name: 'Maria Luiza Brito Laranjeira', role: 'Mestranda em Ciência da Computação', link:'https://www.linkedin.com/in/malu-laranjeira/ '}
   ],
   'Membros Associados': [
     { name: 'Francimaria Nascimento', role: 'Doutoranda em Ciência da Computação' },
@@ -30,11 +39,7 @@ const members = {
     },
   ],
   Graduação: [
-    {
-      name: 'Bianca Lima',
-      role: 'Graduanda em Letras Português',
-      link: 'https://br.linkedin.com/in/biancanathally',
-    },
+    { name: 'Breno Mendes de Melo Uchôa Cavalcanti', role: 'Graduando em Engenharia da Computação',link:'https://www.linkedin.com/in/breno-cavalcanti' },
     { name: 'Camila Vieira', role: 'Graduanda em Engenharia da Computação' },
     { name: 'Ernesto Gonçalves', role: 'Graduando em Ciência da Computação' },
     {
@@ -42,14 +47,14 @@ const members = {
       role: 'Graduando em Ciência da Computação',
       link: 'https://www.linkedin.com/in/igorrocha28',
     },
-    { name: 'Joao Victor Cardoso Lopes', role: 'Graduando em Engenharia da Computação' },
-    { name: 'Jose Vinicius de Santana Souza', role: 'Graduando em Engenharia da Computação' },
+    { name: 'Joao Victor Cardoso Lopes', role: 'Graduando em Ciência da Computação',link:'https://www.linkedin.com/in/joão-victor-lopess/' },
+    { name: 'Jose Vinícius de Santana Souza', role: 'Graduando em Engenharia da Computação', link:'https://www.linkedin.com/in/jose-vinicius-souza/' },
     {
-      name: 'Lucas Nascimento Brandao',
+      name: 'Lucas Nascimento Brandão',
       role: 'Graduando em Engenharia da Computação',
       link: 'https://www.linkedin.com/in/lucas-n-brandão',
     },
-    { name: 'Marcelo Vinicius Bastos Santos', role: 'Graduando em Engenharia da Computação' },
+    { name: 'Marcelo Vinicius Bastos Santos', role: 'Graduando em Engenharia da Computação', link:'https://www.linkedin.com/in/marcelo-vinicius-bastos/ '},
     { name: 'Matheus Julio Boncsidai de Oliveira', role: 'Graduando em Engenharia da Computação' },
   ],
 };
@@ -76,8 +81,11 @@ export const TimeSection = () => {
   );
 
   return (
-    <div id="time" className="bg-black text-white px-24 py-16">
-      <TimeBar />
+   <div id="time" className="bg-black text-white px-24 py-16">
+      {/* Increased text size and weight for "O TIME" */}
+      <div className="text-3xl font-bold mb-8">
+        TIME
+      </div>
 
       {/* Professor fixo sem título */}
       <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">

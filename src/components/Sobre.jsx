@@ -1,4 +1,3 @@
-import { ReactComponent as GrupoPesquisaSVG } from '../assets/O GRUPO DE PESQUISA.svg';
 import lupa2 from '../assets/lupa2.svg'; 
 
 export const Sobre = () => {
@@ -15,9 +14,9 @@ export const Sobre = () => {
 
       <div className="flex justify-end">
         <div className="max-w-[800px] overflow-auto text-left">
-          <div className="w-full">
-            <GrupoPesquisaSVG className="mb-6 max-w-none" />
-          </div>
+         <div className="w-full text-3xl font-semibold mb-24">
+            O GRUPO DE PESQUISA
+        </div>
           <div className="space-y-6 text-[20px] leading-relaxed">
             <p>
               O grupo de pesquisa CoDes (Combate à Desinformação e ao Discurso de Ódio) tem como objetivo estudar, projetar e desenvolver estratégias para combater desinformação, fake news e discurso de ódio. Utilizamos estratégias de Inteligência Artificial, com foco em Aprendizagem de Máquina e Processamento de Linguagem Natural.
