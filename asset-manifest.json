@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1902b20b.css",
+    "main.js": "/static/js/main.6b56ef8c.js",
+    "static/media/REM-Bold.ttf": "/static/media/REM-Bold.a275aa9b518d611577b0.ttf",
+    "static/media/REM-Regular.ttf": "/static/media/REM-Regular.a4c1870f551a4f77f763.ttf",
+    "static/media/cin.png": "/static/media/cin.e0a0d1aeac018ade9a3c.png",
+    "static/media/O GRUPO DE PESQUISA.svg": "/static/media/O GRUPO DE PESQUISA.8dbbb62592d4d29f39780773b783b2a2.svg",
+    "static/media/O TIME.svg": "/static/media/O TIME.2d4157f1bad6bd59bb540a95c5d62c07.svg",
+    "static/media/lupinha.svg": "/static/media/lupinha.96c7b6b73f40d2715952a6834f620c6a.svg",
+    "static/media/blocudos.svg": "/static/media/blocudos.92cc0aadd86f1a46effe8ac210bfd390.svg",
+    "index.html": "/index.html",
+    "main.1902b20b.css.map": "/static/css/main.1902b20b.css.map",
+    "main.6b56ef8c.js.map": "/static/js/main.6b56ef8c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1902b20b.css",
+    "static/js/main.6b56ef8c.js"
+  ]
+}
