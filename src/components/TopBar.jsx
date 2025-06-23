@@ -44,13 +44,13 @@ export const TopBar = () => {
             <a className='hover:text-custom-green' href='#sobre' onClick={(e) => handleScroll(e, 'sobre')}>Sobre</a>
           </div>
           <div>
-            <a className='hover:text-custom-green' href='#time' onClick={(e) => handleScroll(e, 'time')}>Time</a>
-          </div>
-          <div>
             <a className='hover:text-custom-green' href='#artigos' onClick={(e) => handleScroll(e, 'artigos')}>Artigos</a>
           </div>
           <div>
             <a className='hover:text-custom-green' href='#noticias' onClick={(e) => handleScroll(e, 'noticias')}>Notícias</a>
+          </div>
+                    <div>
+            <a className='hover:text-custom-green' href='#time' onClick={(e) => handleScroll(e, 'time')}>Time</a>
           </div>
           <div>
             <a className='hover:text-custom-green' href='#contato' onClick={(e) => handleScroll(e, 'contato')}>Contato</a>

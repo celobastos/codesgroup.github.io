@@ -25,5 +25,14 @@
     "date":"Publicado em 27 de Maio de 2025",
     "link":"https://portal.cin.ufpe.br/2025/05/27/liga-academica-de-inteligencia-artificial-do-cin-ufpe-promove-palestra-sobre-identificacao-de-fake-news/",
     "subtitulo":""
+  },
+  {
+    "title":"DeepSeek traz novas perspectivas para a corrida pela liderança em inteligência artificial",
+    "author":"George Darmiton",
+    "id":4,
+    "text": "Em um cenário de avanço tecnológico impulsionado por restrições, George Darmiton, professor do Centro de Informática (CIn) da UFPE e membro da Academia Pernambucana de Ciências, destaca a revolução dos chatbots, como ChatGPT e Gemini, alicerçados em Grandes Modelos de Linguagem (LLMs). Ele ressalta que, tradicionalmente, o alto custo de treinamento era uma barreira, com o GPT-4 da OpenAI estimado em mais de 75 milhões de dólares. No entanto, esse panorama foi desafiado pelo lançamento do DeepSeek R1, um chatbot chinês que, segundo a empresa, teve um custo de treinamento de apenas 6 milhões de dólares – menos de 10% do valor do GPT-4 –, e ainda superou-o em tarefas como matemática e raciocínio.\n\nDarmiton enfatiza como as restrições impulsionaram essa inovação. Desenvolvido durante sanções de exportação de chips de computadores dos EUA para a China, o R1 exigiu que os engenheiros da DeepSeek criassem um modelo que necessita de um décimo do poder computacional de um LLM equivalente. Isso resultou em um chatbot mais rápido, barato e com desempenho comparável aos líderes de mercado.\n\nAlém disso, o R1 adota uma tecnologia de peso aberta, permitindo que qualquer pessoa use e modifique o programa. Darmiton sublinha que a ascensão da DeepSeek não é coincidência, mas sim parte de um plano governamental chinês para alcançar a liderança mundial em IA, com investimentos em formação de especialistas, infraestrutura, desenvolvimento industrial e pesquisa científica. A DeepSeek também se destaca pela descrição detalhada de seus métodos em artigos científicos e pela estratégia de ciência aberta.\n\nPor fim, George Darmiton alerta que ferramentas como ChatGPT e DeepSeek, por extraírem informações de dados, não estão imunes a vieses (gênero, etnia, orientação sexual, etc.) e são tão boas quanto os dados que as construíram. A privacidade dos dados também é uma preocupação fundamental. Ele conclui que a liderança das gigantes americanas foi abalada e que muitos outros modelos mais baratos e melhores surgirão em breve, indicando que a jornada da IA está apenas no começo.",
+    "date":"Publicado em 17 de Fevereiro de 2025",
+    "link":"https://jc.uol.com.br/opiniao/artigo/2025/02/17/george-darmiton-deepseek-traz-novas-perspectivas-para-a-corrida-pela-lideranca-em-inteligencia-artificial.html",
+    "subtitulo":"O aplicativo R1 da empresa chinesa foi desenvolvido em um momento de sanções de exportação de chips de computadores dos Estados Unidos para a China"
   }
 ]

@@ -29,7 +29,7 @@ const NoticiasDetalhadas = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#DFEFA6] text-black">
+    <div className="min-h-[129vh] flex flex-col bg-[#DFEFA6] text-black">
       {/* Make sure TopBarTwo does not override the background visually */}
       <TopBarTwo />
 

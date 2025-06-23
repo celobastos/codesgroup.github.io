@@ -12,9 +12,12 @@ import FotoJose from '../assets/fotos_integrantes/Foto_Jose_Vinicius.jpeg';
 import FotoLucasB from '../assets/fotos_integrantes/Foto_Lucas_Brandão_Codes.webp';
 import FotoBreno from '../assets/fotos_integrantes/fotoBreno.jpg';
 import FotoJoaoVictor from '../assets/fotos_integrantes/Foto_Joao_Victor.jpg';
-import FotoMarcelo from '../assets/fotos_integrantes/foto_Marcelo.jpg';
+import FotoMarcelo from '../assets/fotos_integrantes/foto_Marcelo.jpeg';
 import FotoMatheus from '../assets/fotos_integrantes/Foto_Matheus.jpg';
 import FotoGeorge from '../assets/fotos_integrantes/Foto_GeorgeDarminton.jpg';
+import FotoErnesto from '../assets/fotos_integrantes/Foto_Ernesto.jpeg';
+import FotoMaria from '../assets/fotos_integrantes/Foto_mariaLaraneirasjpeg.jpeg';
+import FotoFran from '../assets/fotos_integrantes/Foto_Francimariajpeg.jpeg'
 
 const members = {
   Professor: [
@@ -54,20 +57,23 @@ const members = {
     },
     { name: 'Leilane Cruz', role: 'Mestranda em Ciência da Computação' },
     {
-      name: 'Lucas A. Lisboa',
-      role: 'Mestrando em Ciência da Computação',
-      photo: FotoLucasLisboa,
-    },
-    {
       name: 'Maria Luiza Brito Laranjeira',
       role: 'Mestranda em Ciência da Computação',
       link: 'https://www.linkedin.com/in/malu-laranjeira/',
+      photo:FotoMaria,
     },
   ],
   'Membros Associados': [
     {
       name: 'Francimaria Nascimento',
-      role: 'Doutoranda em Ciência da Computação',
+      role: 'Doutora em Ciência da Computação',
+      link:'https://www.linkedin.com/in/francimaria-nascimento-674738106/',
+      photo: FotoFran,
+    },
+    {
+      name: 'Lucas A. Lisboa',
+      role: 'Mestre em Ciência da Computação',
+      photo: FotoLucasLisboa,
     },
     {
       name: 'Rafael Menelau Oliveira e Cruz',
@@ -86,10 +92,12 @@ const members = {
       name: 'Camila Vieira',
       role: 'Graduanda em Engenharia da Computação',
       photo: FotoCamila,
+      link:'https://www.linkedin.com/in/camilab-vieira/'
     },
     {
       name: 'Ernesto Gonçalves',
       role: 'Graduando em Ciência da Computação',
+      photo: FotoErnesto,
     },
     {
       name: 'Igor Rocha',
@@ -125,6 +133,7 @@ const members = {
       name: 'Matheus Julio Boncsidai de Oliveira',
       role: 'Graduando em Engenharia da Computação',
       photo: FotoMatheus,
+      link:'https://www.linkedin.com/in/matheusboncsidai/'
     },
   ],
 };
