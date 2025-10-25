@@ -68,11 +68,6 @@ const ArtigoDetalhado = () => {
             {artigo.link}
           </a>
         </p>
-
-        {/* Corpo do artigo */}
-        <div className="text-lg whitespace-pre-wrap leading-relaxed">
-          {artigo.content || '[corpo do artigo] Lorem Ipsum is simply dummy text of the printing and typesetting industry...'}
-        </div>
       </div>
     </div>
   );

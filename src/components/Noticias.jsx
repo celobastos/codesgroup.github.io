@@ -36,25 +36,28 @@ const Noticias = () => {
       </div>
 
       {/* Lista de notícias */}
-      <div className="flex flex-col items-center gap-6 w-full">
-        {noticias.length > 0 ? (
-          noticias.map((noticia, index) => (
-            <Link
-              to={`/news/${noticia.id}`}
-              key={index}
-              className="bg-white rounded-2xl shadow-md p-6 min-h-[140px] transform transition duration-200 ease-in-out hover:shadow-lg hover:scale-105 cursor-pointer w-full"
-            >
-              <div className="flex justify-between items-start mb-2">
-                <h3 className="text-[20px] font-semibold text-black">{noticia.title}</h3>
-                <p className="text-[14px] text-black font-semibold whitespace-nowrap">{noticia.date}</p>
-              </div>
-              <p className="text-[16px] text-black line-clamp-3">{noticia.text}</p>
-            </Link>
-          ))
-        ) : (
-          <p className="text-gray-700">Carregando notícias...</p>
-        )}
-      </div>
+  <div className="flex flex-col items-center gap-6 w-full">
+  {noticias.length > 0 ? (
+    [...noticias]
+      .sort((a, b) => b.id - a.id)
+      .map((noticia, index) => (
+        <Link
+          to={`/news/${noticia.id}`}
+          key={index}
+          className="bg-white rounded-2xl shadow-md p-6 min-h-[140px] transform transition duration-200 ease-in-out hover:shadow-lg hover:scale-105 cursor-pointer w-full"
+        >
+          <div className="flex justify-between items-start mb-2">
+            <h3 className="text-[20px] font-semibold text-black">{noticia.title}</h3>
+            <p className="text-[14px] text-black font-semibold whitespace-nowrap">{noticia.date}</p>
+          </div>
+          <p className="text-[16px] text-black line-clamp-3">{noticia.text}</p>
+        </Link>
+      ))
+  ) : (
+    <p className="text-gray-700">Carregando notícias...</p>
+  )}
+</div>
+
     </div>
   );
 };
