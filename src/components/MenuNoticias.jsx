@@ -41,26 +41,29 @@ export const MenuNoticias = () => {
         </div>
       </div>
 
-      <div className="overflow-y-auto h-screen pt-[236px] px-6 pb-8 space-y-6">
-        {noticias.length > 0 ? (
-          noticias.map((noticia, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow-md p-4 w-full max-w-[1270px] h-[104px] mx-auto transform transition duration-200 ease-in-out hover:shadow-lg hover:scale-[1.01] cursor-pointer overflow-hidden"
-            >
-              <Link to={`/news/${noticia.id}`} className="h-full flex flex-col justify-between">
-                <div className="flex justify-between items-start">
-                  <h3 className="font-bold text-lg">{noticia.title}</h3>
-                  <p className="text-xs text-gray-500 whitespace-nowrap">{noticia.date}</p>
-                </div>
-                <p className="text-sm text-black line-clamp-2">{noticia.text}</p>
-              </Link>
+    <div className="overflow-y-auto h-screen pt-[236px] px-6 pb-8 space-y-6">
+  {noticias.length > 0 ? (
+    [...noticias]
+      .sort((a, b) => b.id - a.id) 
+      .map((noticia, index) => (
+        <div
+          key={index}
+          className="bg-white rounded-xl shadow-md p-4 w-full max-w-[1270px] h-[104px] mx-auto transform transition duration-200 ease-in-out hover:shadow-lg hover:scale-[1.01] cursor-pointer overflow-hidden"
+        >
+          <Link to={`/news/${noticia.id}`} className="h-full flex flex-col justify-between">
+            <div className="flex justify-between items-start">
+              <h3 className="font-bold text-lg">{noticia.title}</h3>
+              <p className="text-xs text-gray-500 whitespace-nowrap">{noticia.date}</p>
             </div>
-          ))
-        ) : (
-          <p className="text-center text-gray-700">Carregando notícias...</p>
-        )}
-      </div>
+            <p className="text-sm text-black line-clamp-2">{noticia.text}</p>
+          </Link>
+        </div>
+      ))
+  ) : (
+    <p className="text-center text-gray-700">Carregando notícias...</p>
+  )}
+</div>
+
     </div>
   );
 };
